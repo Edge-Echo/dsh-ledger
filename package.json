@@ -1,0 +1,47 @@
+{
+  "name": "@edge-echo/dsh-ledger",
+  "version": "0.1.0",
+  "description": "Verifiable execution ledger for DeepSeek Harness sessions: incremental crash-safe multi-frame zstd ingestion, an execution graph with effect attribution, and Merkle-based integrity proofs. Library first — no native dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "author": "dsh-toolkit contributors",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "session-log",
+    "zstd",
+    "audit",
+    "ledger",
+    "merkle",
+    "provenance",
+    "execution-graph",
+    "library"
+  ],
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edge-Echo/dsh-ledger.git"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test --test-timeout=30000 \"tests/*.test.mjs\"",
+    "verify": "node --expose-gc scripts/verify.mjs",
+    "check": "npm run build && npm run test && npm run verify"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.0"
+  }
+}

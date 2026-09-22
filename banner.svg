@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="dsh-ledger — Verifiable execution ledger for DeepSeek Harness sessions">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="55%" stop-color="#0a2019"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f1f2e"/>
+      <stop offset="100%" stop-color="#0c1a28"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="75%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="15%" cy="90%" r="55%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#glow)"/>
+  <rect width="1280" height="640" fill="url(#glow2)"/>
+  <g fill="#ffffff" opacity="0.05">
+    <circle cx="60" cy="60" r="3"/><circle cx="180" cy="60" r="3"/><circle cx="300" cy="60" r="3"/><circle cx="420" cy="60" r="3"/><circle cx="540" cy="60" r="3"/><circle cx="660" cy="60" r="3"/><circle cx="780" cy="60" r="3"/><circle cx="900" cy="60" r="3"/><circle cx="1020" cy="60" r="3"/><circle cx="1140" cy="60" r="3"/><circle cx="60" cy="180" r="3"/><circle cx="180" cy="180" r="3"/><circle cx="300" cy="180" r="3"/><circle cx="420" cy="180" r="3"/><circle cx="540" cy="180" r="3"/><circle cx="660" cy="180" r="3"/><circle cx="780" cy="180" r="3"/><circle cx="900" cy="180" r="3"/><circle cx="1020" cy="180" r="3"/><circle cx="1140" cy="180" r="3"/><circle cx="60" cy="300" r="3"/><circle cx="180" cy="300" r="3"/><circle cx="300" cy="300" r="3"/><circle cx="1020" cy="300" r="3"/><circle cx="1140" cy="300" r="3"/><circle cx="60" cy="420" r="3"/><circle cx="180" cy="420" r="3"/><circle cx="300" cy="420" r="3"/><circle cx="1020" cy="420" r="3"/><circle cx="1140" cy="420" r="3"/><circle cx="60" cy="540" r="3"/><circle cx="180" cy="540" r="3"/><circle cx="300" cy="540" r="3"/><circle cx="420" cy="540" r="3"/><circle cx="540" cy="540" r="3"/><circle cx="660" cy="540" r="3"/><circle cx="780" cy="540" r="3"/><circle cx="900" cy="540" r="3"/><circle cx="1020" cy="540" r="3"/><circle cx="1140" cy="540" r="3"/>
+  </g>
+
+  <!-- motif -->
+  <g stroke="#34d399" stroke-opacity="0.55" stroke-width="2">
+    <line x1="1010" y1="70" x2="940" y2="130"/>
+    <line x1="1010" y1="70" x2="1080" y2="130"/>
+    <line x1="940" y1="130" x2="880" y2="196"/>
+    <line x1="940" y1="130" x2="1000" y2="196"/>
+    <line x1="1080" y1="130" x2="1020" y2="196"/>
+    <line x1="1080" y1="130" x2="1140" y2="196"/>
+  </g>
+  <g fill="#10b981">
+    <circle cx="1010" cy="70" r="11"/>
+    <circle cx="940" cy="130" r="8" fill-opacity="0.85"/>
+    <circle cx="1080" cy="130" r="8" fill-opacity="0.85"/>
+  </g>
+  <g fill="#34d399">
+    <circle cx="880" cy="196" r="7" fill-opacity="0.8"/>
+    <circle cx="1000" cy="196" r="7" fill-opacity="0.8"/>
+    <circle cx="1020" cy="196" r="7" fill-opacity="0.8"/>
+    <circle cx="1140" cy="196" r="7" fill-opacity="0.8"/>
+  </g>
+  <g stroke="#10b981" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="5 6">
+    <rect x="862" y="176" width="36" height="40" rx="6" fill="none"/>
+    <rect x="982" y="176" width="36" height="40" rx="6" fill="none"/>
+    <rect x="1002" y="176" width="36" height="40" rx="6" fill="none"/>
+    <rect x="1122" y="176" width="36" height="40" rx="6" fill="none"/>
+  </g>
+  <text x="1010" y="264" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="21" font-weight="700" fill="#10b981" opacity="0.85">RFC 6962</text>
+  <circle cx="110" cy="480" r="34" fill="none" stroke="#10b981" stroke-opacity="0.2" stroke-width="2"/>
+  <circle cx="110" cy="480" r="56" fill="none" stroke="#10b981" stroke-opacity="0.12" stroke-width="1.5"/>
+  <circle cx="110" cy="480" r="80" fill="none" stroke="#10b981" stroke-opacity="0.07" stroke-width="1"/>
+
+  <!-- logo tile -->
+  <rect x="72" y="64" width="96" height="96" rx="24" fill="url(#brand)"/>
+  <g fill="#ffffff">
+    <rect x="104" y="92" width="32" height="9" rx="4.5" opacity="0.95"/>
+    <rect x="104" y="108" width="32" height="9" rx="4.5" opacity="0.8"/>
+    <rect x="104" y="124" width="32" height="9" rx="4.5" opacity="0.65"/>
+  </g>
+  <path d="M 108 146 l 7 8 l 16 -18" fill="none" stroke="#0b1220" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="72" y="316" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="78" font-weight="800" fill="#f8fafc" letter-spacing="1">dsh-ledger</text>
+  <text x="72" y="374" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="29" font-weight="500" fill="#94a3b8">Verifiable execution ledger for DeepSeek Harness sessions</text>
+<g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="600">
+    <rect x="72" y="496" width="192" height="52" rx="26" fill="url(#chip)" stroke="#065f46" stroke-width="1.5"/>
+    <text x="168" y="529" text-anchor="middle" fill="#6ee7b7">frame walker</text>
+    <rect x="280" y="496" width="225" height="52" rx="26" fill="url(#chip)" stroke="#065f46" stroke-width="1.5"/>
+    <text x="392.5" y="529" text-anchor="middle" fill="#6ee7b7">crash-safe tail</text>
+    <rect x="521" y="496" width="258" height="52" rx="26" fill="url(#chip)" stroke="#065f46" stroke-width="1.5"/>
+    <text x="650" y="529" text-anchor="middle" fill="#6ee7b7">effect attribution</text>
+    <rect x="795" y="496" width="203" height="52" rx="26" fill="url(#chip)" stroke="#065f46" stroke-width="1.5"/>
+    <text x="896.5" y="529" text-anchor="middle" fill="#6ee7b7">Merkle proofs</text>
+    <rect x="72" y="562" width="236" height="52" rx="26" fill="url(#chip)" stroke="#065f46" stroke-width="1.5"/>
+    <text x="190" y="595" text-anchor="middle" fill="#6ee7b7">signed manifests</text>
+  </g>
+</svg>
