@@ -1,7 +1,9 @@
 # The gate this repository's claims depend on.
 #
-# build -> test -> verify, on every push and pull request. Without this, every
-# verification number in the README is a claim about one machine on one afternoon.
+# build -> test -> verify on every push and pull request. The acceptance harness needs a
+# session log; CI has none, so a synthetic one is generated first. The harness says which
+# it used, because a pass against generated data is weaker evidence than one against a
+# real 20 MiB session (that run is a local measurement, reported in the README).
 name: verify
 
 on:
@@ -29,5 +31,10 @@ jobs:
       - name: Test
         run: npm test
 
+      - name: Generate a synthetic session log
+        run: node scripts/make-synthetic-log.mjs "$RUNNER_TEMP/session.jsonl.zstd"
+
       - name: Verify
+        env:
+          DSH_LEDGER_LOG: ${{ runner.temp }}/session.jsonl.zstd
         run: npm run verify

@@ -164,11 +164,22 @@ section('1. structural ingestion with bounded memory')
       const small = await measure(target, 'reference')
       const big = await measure(bigPath, '5x scaled')
       const ratio = big.retained / Math.max(1, small.retained)
-      check(
-        '5x the input does not mean 5x the memory',
-        ratio < 2.5,
-        `${mb(big.size)} MiB used ${ratio.toFixed(2)}x the retained heap of ${mb(small.size)} MiB`,
-      )
+      // A ratio computed from a sub-megabyte baseline is noise, not a memory claim. On the
+      // real 20 MiB log the baseline is ~35 MiB and the assertion is meaningful; on a small
+      // synthetic log it is skipped and said so, rather than reported as a pass or a failure.
+      const MEASURABLE = 4 * 1048576
+      if (small.retained >= MEASURABLE) {
+        check(
+          '5x the input does not mean 5x the memory',
+          ratio < 2.5,
+          `${mb(big.size)} MiB used ${ratio.toFixed(2)}x the retained heap of ${mb(small.size)} MiB`,
+        )
+      } else {
+        console.log(
+          `    [skip] scaling ratio not asserted: the reference retained heap is ` +
+            `${mb(small.retained)} MiB, below the ${mb(MEASURABLE)} MiB floor where the ratio means anything`,
+        )
+      }
       check('the scaled file yields 5x the records', big.count === small.count * 5, `${big.count} vs ${small.count * 5}`)
     } finally {
       await rm(bigDir, { recursive: true, force: true })
