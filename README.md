@@ -184,6 +184,48 @@ for (;;) {
 }
 ```
 
+## Compliance export (CLI)
+
+DSH4's guidance for this space was: *do not invent another audit format — integrate with the one
+that exists*. So `dsh-ledger` emits **`dsh-audit-trail/compliance/1`**, the versioned JSONL that
+[`dsh-audit-trail`](https://www.npmjs.com/package/dsh-audit-trail) defines and verifies.
+
+```bash
+npx @edge-echo/dsh-ledger pack <session.jsonl.zstd> -o audit.zip --key key.pem
+npx @edge-echo/dsh-ledger classify <log> --min-severity medium
+npx @edge-echo/dsh-ledger verify audit.zip --log <log>
+npx @edge-echo/dsh-ledger keygen
+```
+
+The pack is one file you can hand to someone:
+
+| file | what it is |
+|---|---|
+| `compliance.jsonl` | hash-chained audit records in `dsh-audit-trail/compliance/1` |
+| `manifest.json` | Merkle roots over the log's frames and records, optionally Ed25519-signed |
+| `sidecar.jsonl` | what the compliance schema cannot express: effect fidelity, undecidable shell effects, file version chains |
+| `REPORT.md` | human-readable summary with a risk table |
+| `VERIFY.md` | how to check all of it **without** this tool |
+
+**Compatibility is tested, not claimed.** `dsh-audit-trail` is a devDependency here, and the
+conformance suite asserts that this library's canonicalisation and chain hashing are byte-identical
+to the reference primitives, and that the reference verifier accepts documents this library
+produces. That test earned its keep: an earlier version chained documents with the *store* hash
+(`chainHash` + `canonicalRecord`) instead of the document hash
+(`sha256(prev + "\n" + json({recordId, prevHash, payload}) + "\n")`) — a file that looks correct and
+that the reference verifier rejects.
+
+On a real 20 MiB session: 2,128 compliance records, chain validated by `dsh-audit-trail` itself,
+manifest covering 34,729 frames and 53,671 records, signed, and re-verified against the original log.
+
+**Risk is scored by target, not by verb.** An early rule marked every recursive delete `critical`
+and produced 126 critical findings on that session — all of them temp-directory cleanups inside the
+workspace. The rule now reads the target out of the statement the verb sits in (resolving `$var`
+assignments first), so workspace-internal cleanup is `high`, a system path or the workspace root is
+`critical`, and a recursive delete whose target the command text never reveals is reported as
+exactly that: `high` with `destructive:target-unresolved`. The same session now yields 2 critical
+and 129 high.
+
 ---
 
 ## Design decisions worth knowing

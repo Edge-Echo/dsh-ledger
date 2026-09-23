@@ -1,5 +1,29 @@
 # Changelog
 
+## Unreleased
+
+**Compliance export — integration, not another format.** New `compliance.ts` emits
+`dsh-audit-trail/compliance/1`, the schema `dsh-audit-trail` already defines and verifies:
+canonical record, hash chain, the five-level severity ladder (`info` → `critical`), and the same
+`kind` vocabulary. `dsh-audit-trail` is a devDependency, and the conformance suite proves this
+implementation is byte-identical to the reference primitives and that the reference verifier
+accepts our documents. A subtle trap was caught that way: the JSONL chain hashes a
+`{recordId, prevHash, payload}` signature, which is **not** the `chainHash`/`canonicalRecord` pair
+used for the upstream store chain.
+
+**CLI** (`dsh-ledger`): `list`, `report`, `classify` (with `--min-severity`), `pack`, `verify`,
+`keygen`. `pack` writes one portable artifact — compliance JSONL, signed Merkle manifest, a
+sidecar carrying what the compliance schema cannot express (effect fidelity, undecidable shell
+effects, file version chains), a human report, and a verification guide that needs no dsh-ledger
+installed. The ZIP writer is in-tree, so the pack costs no dependency.
+
+**Risk scoring is target-aware.** Recursive deletes were first scored by verb alone, which marked
+126 workspace temp-directory cleanups `critical` on a real session. The target is now read from the
+statement the verb sits in, with `$var` assignments resolved: workspace-internal cleanup is `high`,
+system paths and the workspace root stay `critical`, and an unresolvable target is reported as
+`destructive:target-unresolved` rather than assumed to be the worst case. That session now yields
+2 critical against 129 high.
+
 ## 0.1.0
 
 First release. Library only — no DSH plugin bundle yet, by design: the integrity format and graph

@@ -11,15 +11,21 @@
     "session-log",
     "zstd",
     "audit",
+    "compliance",
+    "evidence",
     "ledger",
     "merkle",
     "provenance",
     "execution-graph",
-    "library"
+    "tamper-evident",
+    "library",
+    "cli"
   ],
   "files": [
     "lib",
     "README.md",
+    "README.zh-CN.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "repository": {
@@ -28,6 +34,9 @@
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "bin": {
+    "dsh-ledger": "lib/cli.js"
+  },
   "engines": {
     "node": ">=22"
   },
@@ -42,6 +51,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
+    "dsh-audit-trail": "^0.1.0",
     "typescript": "^5.7.0"
   }
 }
