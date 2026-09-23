@@ -6,6 +6,8 @@
 [![npm downloads](https://img.shields.io/npm/dm/@edge-echo/dsh-ledger?color=34d399)](https://www.npmjs.com/package/@edge-echo/dsh-ledger)
 [![license](https://img.shields.io/badge/license-MIT-6ee7b7)](LICENSE)
 
+> Part of the **dsh-toolkit family**: [dsh-mcp-bridge](https://github.com/Edge-Echo/dsh-mcp-bridge) · [dsh-win-toolkit](https://github.com/Edge-Echo/dsh-win-toolkit) · [dsh-netassist](https://github.com/Edge-Echo/dsh-netassist) · [dsh-driftwatch](https://github.com/Edge-Echo/dsh-driftwatch) · [mcp-netassist](https://github.com/Edge-Echo/mcp-netassist) · [dsh-ledger](https://github.com/Edge-Echo/dsh-ledger)
+
 **A verifiable execution ledger for [DeepSeek Harness](https://github.com/deepseek-ai) sessions.**
 
 It answers two questions that a session log alone cannot:
