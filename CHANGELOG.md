@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.0
 
 **Compliance export — integration, not another format.** New `compliance.ts` emits
 `dsh-audit-trail/compliance/1`, the schema `dsh-audit-trail` already defines and verifies:

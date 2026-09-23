@@ -1,6 +1,6 @@
 {
   "name": "@edge-echo/dsh-ledger",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Verifiable execution ledger for DeepSeek Harness sessions: incremental crash-safe multi-frame zstd ingestion, an execution graph with effect attribution, and Merkle-based integrity proofs. Library first — no native dependencies.",
   "type": "module",
   "license": "MIT",
