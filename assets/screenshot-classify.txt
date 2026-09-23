@@ -1,0 +1,26 @@
+﻿operations by type (1860 effects)
+  edit         687
+  shell        650
+  read         262
+  write        178
+  search       50
+  control      19
+  network      14
+
+risk levels
+  critical  2
+  high      129
+  medium    636
+  low       820
+  info      541
+
+records at high or above (131)
+  [CRITICAL] pwsh: shell: $b="C:\Users\Administrator\Desktop\Show Time\The Life of a Cell"
+$py=(Get-Command p
+             flags: destructive:outside-workspace, effects-undecidable, shell
+  [CRITICAL] pwsh: shell: $b="C:\Users\Administrator\Desktop\Show Time\The Life of a Cell"
+Remove-Item "$b\_c
+             flags: destructive:outside-workspace, effects-undecidable, shell
+  [HIGH    ] pwsh: shell: $tmp = "C:\Users\Administrator\Desktop\Show Time\_pptx_inspect"; if (Test-Path $tmp
+             flags: destructive:in-workspace, effects-undecidable, shell
+  [HIGH    ] pwsh: shell: Remove-Item "C:\Users\Administrator\Desktop\Show Time\_pptx_inspect" -Recurse -Forc
