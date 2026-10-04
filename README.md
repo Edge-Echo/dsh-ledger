@@ -1,14 +1,20 @@
 # dsh-ledger
 
+**Your agent touched your repository. This tells you exactly what it read, wrote and deleted — and proves the record has not been edited since.**
+
+### When you need this
+
+- Something broke and you need to reconstruct which files the agent actually changed, and when
+- You have to hand the record to someone else, and they need to verify it themselves rather than trust you
+- You want to know what a task really cost in tokens, cache reads and reasoning
+
+On a real 20 MiB session log: 34,729 frame boundaries located in 27 ms without decompressing, 1,860 tool calls paired with their results, and a single record provable with a 1,570-byte proof (0.0075% of the log).
+
 ![dsh-ledger](https://raw.githubusercontent.com/Edge-Echo/dsh-ledger/main/banner.svg)
 
 [![npm version](https://img.shields.io/npm/v/@edge-echo/dsh-ledger?color=10b981&logo=npm)](https://www.npmjs.com/package/@edge-echo/dsh-ledger)
 [![npm downloads](https://img.shields.io/npm/dm/@edge-echo/dsh-ledger?color=34d399)](https://www.npmjs.com/package/@edge-echo/dsh-ledger)
 [![license](https://img.shields.io/badge/license-MIT-6ee7b7)](LICENSE)
-
-> Part of the **dsh-toolkit family**: [dsh-mcp-bridge](https://github.com/Edge-Echo/dsh-mcp-bridge) · [dsh-win-toolkit](https://github.com/Edge-Echo/dsh-win-toolkit) · [dsh-netassist](https://github.com/Edge-Echo/dsh-netassist) · [dsh-driftwatch](https://github.com/Edge-Echo/dsh-driftwatch) · [mcp-netassist](https://github.com/Edge-Echo/mcp-netassist) · [dsh-ledger](https://github.com/Edge-Echo/dsh-ledger)
-
-**A verifiable execution ledger for [DeepSeek Harness](https://github.com/deepseek-ai) sessions.**
 
 It answers two questions that a session log alone cannot:
 
@@ -294,3 +300,15 @@ tampered signed manifest.
 
 MIT
 
+## Related
+
+Part of the **dsh-toolkit family** — small, independently useful pieces for
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness):
+
+- [dsh-mcp-bridge](https://github.com/Edge-Echo/dsh-mcp-bridge) — install six curated MCP servers, verified in CI
+- [dsh-win-toolkit](https://github.com/Edge-Echo/dsh-win-toolkit) — clipboard, notifications, hosts, port checks on Windows
+- [dsh-netassist](https://github.com/Edge-Echo/dsh-netassist) — network and proxy diagnosis with a concrete next step
+- [dsh-driftwatch](https://github.com/Edge-Echo/dsh-driftwatch) — behaviour-drift reports between two session logs
+- [dsh-ledger](https://github.com/Edge-Echo/dsh-ledger) — what the agent did to your files, provably unaltered
+- [dsh-release-evidence](https://github.com/Edge-Echo/dsh-release-evidence) — one verifiable artifact per release
+- [mcp-netassist](https://github.com/Edge-Echo/mcp-netassist) — the same network checks as an MCP server, any client
